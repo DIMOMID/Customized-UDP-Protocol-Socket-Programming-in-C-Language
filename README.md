@@ -1,10 +1,16 @@
 # Customized UDP Protocol for client & server (Socket Programming) in C Language
 /**************************************************\
+
 |*   Computer Network Assignment 1 (Client)       *|
-|*   Omid Almasi                                  *|
+
+|*   Omid Almasi - 8/14/2023                      *|
+
 |*   SCU Student ID: xxxxxxxxx                    *|
+
 |*   Professor Moataghedi                         *|
+
 |*   Refer to README.txt for how to run the code  *|
+
 \**************************************************/
 
 
