@@ -12,7 +12,30 @@
 |*   Refer to README.txt for how to run the code  *|
 
 \**************************************************/
+## Breif Introduction
+This protocol is a custom design protocl built on top of the standard UDP protocol, enhancing the communication between a client and a server with a set of predefined primitives and error handling mechanisms. Unlike the traditional UDP, which offers no guarantees on packet delivery, our custom UDP ensures more reliable communication by introducing acknowledgments (ACKs) and rejection sub-codes.
 
+##Features:
+
+Packet Identifiers: We employ unique identifiers for the start and end of packets (0XFFFF) ensuring packet integrity.
+Client Identification: A unique ID for each client, allowing support for up to 255 clients.
+Defined Packet Types:
+DATA (0XFFF1) for data transmission.
+ACK (0XFFF2) for positive acknowledgments.
+REJECT (0XFFF3) with specific sub-codes to provide precise feedback on encountered errors.
+Error Handling:
+Out of sequence packets.
+Length mismatches.
+Missing end of packet identifier.
+Duplicate packet detection.
+##Workflow:
+
+The client sends a series of packets to the server.
+For each correctly received packet, the server acknowledges with an ACK.
+If there are issues with the received packets, the server responds with the appropriate REJECT code.
+The client utilizes an acknowledgment timer (ack_timer) to ensure timely responses. If an ACK isn't received in the set time, the client retransmits the packet.
+The primary objective of this protocol is to add a layer of reliability to UDP. Through our error detection and feedback mechanisms, we aim to minimize data corruption and loss during transmission. Dive into the codebase to explore more, and feel free to contribute!
+## How to run the code
 
 The following are instruction for runnning both client.c & server.c for question #1:
 
