@@ -1,4 +1,4 @@
-# Customized UDP Protocol for client & server (Socket Programming) in C Language
+# Customized UDP Protocol for client & server (Socket Programming) in C Language - Q1 response
 /**************************************************\
 
 |*   Computer Network Assignment 1 (Client)       *|
